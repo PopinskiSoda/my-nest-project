@@ -1,4 +1,4 @@
-import { Body, Controller, Post, Req, UseGuards } from '@nestjs/common';
+import { Body, Controller, HttpCode, Post, Req, UseGuards } from '@nestjs/common';
 import type { Request } from 'express';
 import { CreateUserDto } from '../users/dto/create-user.dto.js';
 import type { User } from '../users/entities/user.entity.js';
@@ -21,6 +21,7 @@ export class AuthController {
 
   @UseGuards(LocalAuthGuard)
   @Post('signin')
+  @HttpCode(200)
   signin(
     @Body() _credentials: SigninDto,
     @Req() request: Request & { user: User },

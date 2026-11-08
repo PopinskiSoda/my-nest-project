@@ -42,7 +42,7 @@ export class WishesService {
   }
 
   findTop(): Promise<Wish[]> {
-    return this.wishes.find({ order: { copied: 'DESC' }, take: 20 });
+    return this.wishes.find({ order: { copied: 'DESC' }, take: 10 });
   }
 
   async findByIds(ids: number[]): Promise<Wish[]> {

@@ -19,7 +19,7 @@ import { UpdateWishlistDto } from './dto/update-wishlist.dto.js';
 import { WishlistsService } from './wishlists.service.js';
 
 @UseGuards(JwtAuthGuard)
-@Controller('wishlistlists')
+@Controller('wishlists')
 export class WishlistsController {
   constructor(
     private readonly service: WishlistsService,
